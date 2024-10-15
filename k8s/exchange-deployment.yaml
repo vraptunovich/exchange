@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exchange-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: exchange-app
+  template:
+    metadata:
+      labels:
+        app: exchange-app
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: k8s-container
+          image: vraptunovich/k8s:1.0
+          ports:
+            - containerPort: 80

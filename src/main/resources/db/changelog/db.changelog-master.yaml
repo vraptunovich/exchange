@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/changes/001-base_currency_create.sql
+  - include:
+      file: classpath:/db/changelog/changes/002-exchange_rates_create.sql
